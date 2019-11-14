@@ -81,6 +81,7 @@
             android:text="By tapping the button sign up, you agree to our terms and conditions and therefore will obey them"
             android:id="@+id/terms"
             android:layout_gravity="center_horizontal" />
+
         <Button
             android:id="@+id/createUserButton"
             android:layout_width="match_parent"
