@@ -4,7 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +47,32 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_accountfor_seller);
+        TextView textView = findViewById(R.id.terms);
+        String text = "By tapping the button sign up, you agree to our terms and conditions and therefore will obey them";
+        SpannableString ss = new SpannableString(text);
+        ClickableSpan clickableSpan1 = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+               /* Toast.makeText(CreateAccountforSeller.this, "One", Toast.LENGTH_SHORT).show();*/
+                if (widget == textView) {
+                    Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("https://www.termsconditionstemplate.net/live.php?token=8lrqFmVsLoGKMcX4rLqXLvdTKQF1Fed4"));
+                    startActivity(webIntent);
+                }
+            }
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setColor(Color.BLUE);
+                ds.setUnderlineText(false);
+            }
+        };
+        ss.setSpan(clickableSpan1, 48, 68, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textView.setText(ss);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
         mLoginTextView.setOnClickListener(this);
