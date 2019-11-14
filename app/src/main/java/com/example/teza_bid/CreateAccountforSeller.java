@@ -93,6 +93,8 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
 
         if (view == mCreate) {
             createNewUser();
+            Intent intent = new Intent(CreateAccountforSeller.this, Sales.class);
+            startActivity(intent);
 
         }
 
@@ -109,10 +111,8 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            /*Intent intent= new Intent(CreateAccountforSeller.this, Sales.class);*/
                             Log.d(TAG, "Authentication successful");
                         } else {
-                            Intent intent = new Intent(CreateAccountforSeller.this, Sales.class);
                             Toast.makeText(CreateAccountforSeller.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
