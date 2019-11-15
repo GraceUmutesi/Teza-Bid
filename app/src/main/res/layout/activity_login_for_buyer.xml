@@ -1,57 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivityForBuyer">
 
-    <EditText
-        android:id="@+id/buyerEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Your email here..."
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="384dp"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/buyerPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Your password here..."
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="495dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/buyeLoginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="573dp"
-        tools:ignore="MissingConstraints" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logImage"
         android:layout_width="402dp"
         android:layout_height="330dp"
         app:srcCompat="@drawable/loginb"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="8dp" />
 
-    <TextView
-        android:id="@+id/newUserTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New user? Register here"
-        tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="645dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="313dp"
+        android:layout_height="326dp"
+        android:layout_below="@+id/logImage"
+        android:layout_marginTop="12dp"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/buyerEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            android:ems="10"
+            android:hint="Your email here..."
+            android:inputType="textEmailAddress"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="384dp" />
+
+        <EditText
+            android:id="@+id/buyerPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buyerEmail"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:ems="10"
+            android:hint="Your password here..."
+            android:inputType="textPassword"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="495dp" />
+
+
+        <Button
+            android:id="@+id/buyeLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buyerPassword"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/button"
+            android:text="Login"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="573dp" />
+
+        <TextView
+            android:id="@+id/newUserTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buyeLoginButton"
+            android:layout_marginTop="24dp"
+            android:text="New user? Register here"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="645dp" />
+    </RelativeLayout>
+</RelativeLayout>
