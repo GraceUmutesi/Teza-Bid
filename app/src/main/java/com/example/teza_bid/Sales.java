@@ -62,7 +62,7 @@ public class Sales extends AppCompatActivity {
         reff=FirebaseDatabase.getInstance().getReference().child("Member");
         ch=(Button)findViewById(R.id.choose);
         up=(Button)findViewById(R.id.createUserButton);
-        move=(Button)findViewById(R.id.shift);
+    
 
         img=(ImageView) findViewById(R.id.profile);
         listViewArtists=(ListView)findViewById(R.id.listViewArtists) ;
@@ -91,18 +91,18 @@ public class Sales extends AppCompatActivity {
                     Fileuploader();
                 }
 
+                    Intent intent = new Intent(Sales.this, SavedSalesProducts.class);
+                    startActivity(intent);
+
 
             }
         });
-        move.setOnClickListener(new View.OnClickListener() {
+      /*  move.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v==move){
-                    Intent intent = new Intent(Sales.this, SavedSalesProducts.class);
-                    startActivity(intent);
-                }
+
             }
-        });
+        });*/
 
 
     }

@@ -83,15 +83,7 @@
             android:text="Save"
             android:textColor="@color/colorPrimary" />
 
-        <Button
-            android:id="@+id/shift"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorAccent"
-            android:padding="10dp"
-            android:text="move"
-            android:textColor="@color/colorPrimary" />
+
 
 
     </LinearLayout>
