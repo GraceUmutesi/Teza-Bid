@@ -2,38 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/locationTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="Result List  "
-        android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/locationNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/locationTextView"
-        android:layout_marginTop="22dp"
-        android:background="@color/colorPrimary"
-        android:text="Name: "
-        android:textSize="30dp"
-        android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/locationPriceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/locationNameText"
-        android:layout_marginTop="44dp"
-        android:background="@color/colorPrimary"
-        android:text="Price: "
-        android:textSize="30dp"
-        android:textStyle="italic" />
-
+    <ListView
+        android:id="@+id/listViewArtists"
+        android:layout_width="match_parent"
+       android:layout_height="match_parent"
+      />
    <!-- <TextView
         android:id="@+id/locationDescriptionText"
         android:layout_width="wrap_content"

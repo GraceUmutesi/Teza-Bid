@@ -43,7 +43,7 @@ import butterknife.ButterKnife;
 public class Sales extends AppCompatActivity {
     EditText nameOfTheProduct,price;
     Member member;
-  Button ch,up;
+  Button ch,up,move;
    ImageView img;
    DatabaseReference reff;
    StorageReference mStorageRef;
@@ -62,6 +62,8 @@ public class Sales extends AppCompatActivity {
         reff=FirebaseDatabase.getInstance().getReference().child("Member");
         ch=(Button)findViewById(R.id.choose);
         up=(Button)findViewById(R.id.createUserButton);
+        move=(Button)findViewById(R.id.shift);
+
         img=(ImageView) findViewById(R.id.profile);
         listViewArtists=(ListView)findViewById(R.id.listViewArtists) ;
         artistList=new ArrayList<>();
@@ -77,6 +79,7 @@ public class Sales extends AppCompatActivity {
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 member.setName(nameOfTheProduct.getText().toString().trim());
                 member.setPrice(price.getText().toString().trim());
                 reff.push().setValue(member);
@@ -87,36 +90,24 @@ public class Sales extends AppCompatActivity {
                 }else {
                     Fileuploader();
                 }
-               /* Intent intent = new Intent(Sales.this, SavedSalesProducts.class);
-                startActivity(intent);*/
+
 
             }
         });
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        reff.addValueEventListener(new ValueEventListener() {
+        move.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange( DataSnapshot dataSnapshot) {
-                artistList.clear();
-                for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()){
-                    Member artist =artistSnapshot.getValue(Member.class);
-                    artistList.add(artist);
+            public void onClick(View v) {
+                if (v==move){
+                    Intent intent = new Intent(Sales.this, SavedSalesProducts.class);
+                    startActivity(intent);
                 }
-                ArtistList adapter=new ArtistList(Sales.this,artistList);
-                listViewArtists.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled( DatabaseError databaseError) {
-
             }
         });
+
+
     }
+
+
 
     private  String getExtension(Uri uri)
     {
