@@ -10,15 +10,18 @@
     <item android:id="@+id/nav_Buy"
         android:icon="@drawable/ic_shopping_cart_black_24dp"
         android:title="Buy"/>
-    <item android:id="@+id/nav_cat"
+    <item android:id="@+id/nav_rent"
         android:icon="@drawable/ic_style_black_24dp"
-        android:title="Category"/>
+        android:title="Rent"/>
 </group>
 <item android:title="info">
 <menu>
     <item android:id="@+id/nav_rate"
         android:icon="@drawable/ic_rate_review_black_24dp"
         android:title="Rate"/>
+    <item android:id="@+id/nav_help"
+        android:icon="@drawable/help"
+        android:title="Help"/>
 </menu>
 
 </item>

@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer"
     tools:context=".Drawer">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/catContent"/>
 
 
         <com.google.android.material.navigation.NavigationView
+            app:headerLayout="@layout/header"
+            android:id="@+id/nav"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/white"
