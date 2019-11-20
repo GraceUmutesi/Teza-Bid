@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/bac"
     tools:context=".HomeActivity">
 
 
     <SearchView
         android:id="@+id/search"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="150dp"
         android:iconifiedByDefault="false"
         android:queryHint="Search">
-
     </SearchView>
 
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="60dp" />
+
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="440dp">
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUY"
+        android:textStyle="bold"
+   />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="SELL"
+        android:layout_toRightOf="@+id/buy"
+        android:id="@+id/sell"
+        android:textStyle="bold"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/sell"
+        android:text="RENT"
+        android:textStyle="bold"
+       />
+</RelativeLayout>
+
+</RelativeLayout>
