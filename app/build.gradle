@@ -43,5 +43,11 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.4.+' // Image cropper
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+//    implementation "androidx.cardview:cardview:$cardview_version"
+
+
+//    annotationProcessor 'com.bumptech.glide:compiler:4.10.0
 
 }
