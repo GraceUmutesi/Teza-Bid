@@ -8,18 +8,18 @@
 
     <ImageView
         android:id="@+id/logImage"
-        android:layout_width="402dp"
-        android:layout_height="330dp"
+        android:layout_width="400dp"
+        android:layout_height="223dp"
         app:srcCompat="@drawable/loginb"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="8dp" />
 
     <RelativeLayout
-        android:layout_width="313dp"
-        android:layout_height="326dp"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
         android:layout_below="@+id/logImage"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="-22dp"
         android:padding="30dp">
 
         <EditText
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/buyerPassword"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/button"
             android:text="Login"
             tools:ignore="MissingConstraints"

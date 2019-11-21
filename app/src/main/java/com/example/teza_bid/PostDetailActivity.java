@@ -70,13 +70,14 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         etComment = (EditText) findViewById(R.id.etComment);
         send = (ImageButton) findViewById(R.id.sendBtn) ;
 
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PostDetailActivity.this,PostDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+        send.setOnClickListener(this);
+//    {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(PostDetailActivity.this,PostDetailActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         comments = new ArrayList<>();
 
     }
@@ -122,8 +123,8 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         firebaseDatabase.getReference("Users").child(currentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                u = dataSnapshot.getValue(User.class);
-//                u.setUid(currentUser.getUid());
+                u = dataSnapshot.getValue(User.class);
+                u.setUid(currentUser.getUid());
                 AllMethods.name = u.getName();
             }
 

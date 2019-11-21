@@ -44,7 +44,7 @@ class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentAdapterV
         if (comment.getName().equals(AllMethods.name)){
             holder.tvTitle.setText("You: " +comment.getComment());
             holder.tvTitle.setGravity(Gravity.START);
-            holder.l1.setBackgroundColor(Color.parseColor("EF9E73"));
+            holder.l1.setBackgroundColor(Color.parseColor("#bdbdbd"));
 
         }
         else
@@ -54,6 +54,7 @@ class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentAdapterV
         }
 
     }
+
 
     @Override
     public int getItemCount() {

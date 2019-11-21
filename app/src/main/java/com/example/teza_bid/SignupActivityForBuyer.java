@@ -66,7 +66,7 @@ public class SignupActivityForBuyer extends AppCompatActivity implements View.On
         }
         if (view == newUserButton){
             createNewUser();
-            Intent intent = new Intent(SignupActivityForBuyer.this, LoginActivityForBuyer.class);
+            Intent intent = new Intent(SignupActivityForBuyer.this, PostDetailActivity.class);
             startActivity(intent);
         }
     }
