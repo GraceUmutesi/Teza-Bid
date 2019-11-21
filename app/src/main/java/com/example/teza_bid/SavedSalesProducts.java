@@ -2,6 +2,8 @@ package com.example.teza_bid;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,55 +25,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SavedSalesProducts extends AppCompatActivity {
-TextView a,b;
-Button btn;
-DatabaseReference reff;
-    EditText nameOfTheProduct,price;
-    Member member;
-    Button ch,up;
-    ListView listViewArtists;
-    List<Member> artistList;
+    private RecyclerView mRecyclerView;
+    private ArtistList mAdapter;
+
+    private ProgressBar mProgressCircle;
+
+    private DatabaseReference mDatabaseRef;
+    protected List<Member> mUploads;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_sales_products);
-        nameOfTheProduct=(EditText)findViewById(R.id.nameOfUserEditText);
-        price=(EditText)findViewById(R.id.priceOfUserEditText);
-        member=new Member();
-        reff=FirebaseDatabase.getInstance().getReference().child("Member");
-        listViewArtists=(ListView)findViewById(R.id.listViewArtists) ;
-        artistList=new ArrayList<>();
 
+        mRecyclerView = findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        mProgressCircle = findViewById(R.id.progress_circle);
 
+        mUploads = new ArrayList<>();
 
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Member");
 
-            /*    Toast.makeText(SavedSalesProducts.this,"info successsfully enterred",Toast.LENGTH_LONG).show();
-*/
-
-
-            }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        reff.addValueEventListener(new ValueEventListener() {
+        mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange( DataSnapshot dataSnapshot) {
-                artistList.clear();
-                for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()){
-                    Member artist =artistSnapshot.getValue(Member.class);
-                    artistList.add(artist);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Member upload = postSnapshot.getValue(Member.class);
+                    mUploads.add(upload);
                 }
-                ArtistList adapter=new ArtistList(SavedSalesProducts.this,artistList);
-                listViewArtists.setAdapter(adapter);
+
+                mAdapter = new ArtistList(SavedSalesProducts.this, mUploads);
+
+                mRecyclerView.setAdapter(mAdapter);
+                mProgressCircle.setVisibility(View.INVISIBLE);
             }
 
             @Override
-            public void onCancelled( DatabaseError databaseError) {
-
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(SavedSalesProducts.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                mProgressCircle.setVisibility(View.INVISIBLE);
             }
         });
     }
+
 }

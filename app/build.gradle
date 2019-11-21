@@ -47,5 +47,6 @@ dependencies {
     implementation 'com.android.support:support-v4:26'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:26.0.+'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 }

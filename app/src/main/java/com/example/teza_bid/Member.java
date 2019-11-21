@@ -1,35 +1,45 @@
 package com.example.teza_bid;
 
 public class Member {
-    private String memberName;
-    private String name;
-    private String price;
-
+    private String mName;
+    private String mPrice;
+    private String mImageUrl;
 
     public Member() {
+        //empty constructor needed
     }
 
-    public String getMemberName() {
-        return memberName;
-    }
+    public Member(String name, String price,String imageUrl) {
+        if (name.trim().equals("")) {
+            name = "No Name";
+        }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+        mName = name;
+        mPrice=price;
+        mImageUrl = imageUrl;
     }
 
     public String getName() {
-        return name;
+        return mName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        mName = name;
     }
 
     public String getPrice() {
-        return price;
+        return mPrice;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.mPrice = price;
+    }
+
+    public String getImageUrl() {
+        return mImageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        mImageUrl = imageUrl;
     }
 }
