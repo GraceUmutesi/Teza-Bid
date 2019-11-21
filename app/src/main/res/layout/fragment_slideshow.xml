@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.category.CategoryFragment"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_marginBottom="0dp"
+    android:background="#ffffff">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="70dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:gravity="center"
+                        android:id="@+id/device"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/appliences" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/text_slideshow"
+                            android:text="Search user"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/furniture"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/furnitures" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Search testimonies"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/kit"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/kitchen" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Search testimonies"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/Deco"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/deco" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Search testimonies"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/book"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/bookshelves" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Search testimonies"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/fashion"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="90dp"
+
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/fashion" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Search testimonies"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="12dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/other"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="90dp"
+
+                        android:alpha="0.9"
+                        android:padding="2dp"
+                        android:src="@drawable/other" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/Text_des"
+
+                        android:text="Search testimonies"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
