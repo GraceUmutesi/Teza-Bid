@@ -1,5 +1,7 @@
 package com.example.teza_bid;
 
+import androidx.annotation.NonNull;
+
 class User {
     String name;
     String uid;
@@ -36,5 +38,15 @@ class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User("+
+                "uid='"+uid+'\''+
+                ", name='"+name+'\''+
+                ", email='"+email +'\''+
+                ")";
     }
 }

@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -37,9 +40,9 @@ import butterknife.ButterKnife;
 
 public class PostDetailActivity extends AppCompatActivity implements View.OnClickListener{
 
-    @BindView(R.id.rv_comment) RecyclerView rvComment;
-    @BindView(R.id.comment) EditText etComment;
-    @BindView(R.id.image_button) ImageButton send;
+     RecyclerView rvComment;
+     EditText etComment;
+     ImageButton send;
 
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
@@ -63,7 +66,9 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         firebaseDatabase = FirebaseDatabase.getInstance();
         u=new User();
 
-        ButterKnife.bind(this);
+        rvComment = (RecyclerView) findViewById(R.id.rv_comment);
+        etComment = (EditText) findViewById(R.id.etComment);
+        send = (ImageButton) findViewById(R.id.sendBtn) ;
 
         send.setOnClickListener(this);
         comments = new ArrayList<>();
@@ -82,6 +87,22 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         {
             Toast.makeText(getApplicationContext(),"The blank comment cannot be sent", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuLogout){
+            auth.signOut();
+            finish();
+            startActivity(new Intent(PostDetailActivity.this, MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
