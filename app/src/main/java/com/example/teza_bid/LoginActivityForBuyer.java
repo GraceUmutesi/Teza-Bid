@@ -74,7 +74,7 @@ public class LoginActivityForBuyer extends AppCompatActivity implements View.OnC
 
         if (v == loginButton){
             loginWithPassword();
-            Intent intent = new Intent(LoginActivityForBuyer.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivityForBuyer.this, PostDetailActivity.class);
             startActivity(intent);
         }
     }

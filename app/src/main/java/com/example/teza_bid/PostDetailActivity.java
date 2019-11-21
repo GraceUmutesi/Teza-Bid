@@ -46,7 +46,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference commentdb;
+    DatabaseReference commentDb;
     CommentAdapter commentAdapter;
     User u;
     List<Comment> comments;
@@ -70,7 +70,13 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         etComment = (EditText) findViewById(R.id.etComment);
         send = (ImageButton) findViewById(R.id.sendBtn) ;
 
-        send.setOnClickListener(this);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PostDetailActivity.this,PostDetailActivity.class);
+                startActivity(intent);
+            }
+        });
         comments = new ArrayList<>();
 
     }
@@ -80,7 +86,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         if (!TextUtils.isEmpty(etComment.getText().toString())){
             Comment comment = new Comment(etComment.getText().toString(),u.getName());
             etComment.setText("");
-            commentdb.push().setValue(comment);
+            commentDb.push().setValue(comment);
         }
 
         else
@@ -116,8 +122,8 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
         firebaseDatabase.getReference("Users").child(currentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                u = dataSnapshot.getValue(User.class);
-                u.setUid(currentUser.getUid());
+//                u = dataSnapshot.getValue(User.class);
+//                u.setUid(currentUser.getUid());
                 AllMethods.name = u.getName();
             }
 
@@ -127,8 +133,8 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
             }
         });
 
-        commentdb = firebaseDatabase.getReference("comments");
-        commentdb.addChildEventListener(new ChildEventListener() {
+        commentDb = firebaseDatabase.getReference("comments");
+        commentDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Comment comment = dataSnapshot.getValue(Comment.class);
@@ -198,7 +204,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
         rvComment.setLayoutManager(new LinearLayoutManager(PostDetailActivity.this));
         rvComment.setHasFixedSize(true);
-        commentAdapter = new CommentAdapter(PostDetailActivity.this,comments,commentdb);
+        commentAdapter = new CommentAdapter(PostDetailActivity.this,comments,commentDb);
         rvComment.setAdapter(commentAdapter);
     }
 }
