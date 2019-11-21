@@ -57,7 +57,7 @@ public class Sales extends AppCompatActivity {
 
     private Button mButtonChooseImage;
     private Button mButtonUpload;
-    private TextView mTextViewShowUploads;
+    private Button mTextViewShowUploads;
     private EditText mEditTextFileName;
     private EditText mPrice;
     private ImageView mImageView;
@@ -183,13 +183,14 @@ public class Sales extends AppCompatActivity {
                                         {
                                             throw task.getException();
                                         }
-                                        return mStorageRef.getDownloadUrl();
+                                        return taskSnapshot.getStorage().getDownloadUrl();
                                     }
                                 }).addOnCompleteListener(new OnCompleteListener<Uri>()
                                 {
                                     @Override
                                     public void onComplete(@NonNull Task<Uri> task)
                                     {
+
                                         if (task.isSuccessful())
                                         {
                                             Uri downloadUri = task.getResult();
@@ -199,8 +200,8 @@ public class Sales extends AppCompatActivity {
                                             Member upload = new Member(mEditTextFileName.getText().toString().trim(),
                                                     mPrice.getText().toString().trim(),
                                                     downloadUri.toString());
-
-                                            mDatabaseRef.push().setValue(upload);
+                                            String uploadId = mDatabaseRef.push().getKey();
+                                            mDatabaseRef.child(uploadId).setValue(upload);
                                         } else
                                         {
                                             Toast.makeText(Sales.this, "upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -208,11 +209,11 @@ public class Sales extends AppCompatActivity {
                                     }
                                 });
                             }
-                            Member upload = new Member(mEditTextFileName.getText().toString().trim(),
+                           /* Member upload = new Member(mEditTextFileName.getText().toString().trim(),
                                     mPrice.getText().toString().trim(),
                                     taskSnapshot.getUploadSessionUri().toString());
                             String uploadId = mDatabaseRef.push().getKey();
-                            mDatabaseRef.child(uploadId).setValue(upload);
+                            mDatabaseRef.child(uploadId).setValue(upload);*/
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

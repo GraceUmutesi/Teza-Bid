@@ -90,11 +90,12 @@
             android:text="Save"
             android:textColor="@color/colorPrimary" />
 
-        <TextView
+        <Button
             android:id="@+id/text_view_show_uploads"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="45dp"
             android:layout_marginLeft="25dp"
             android:gravity="center"
             android:text="Show Uploads"
