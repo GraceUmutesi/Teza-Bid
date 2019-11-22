@@ -5,10 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -34,6 +36,16 @@ public class CarActivity extends AppCompatActivity {
 
         CarActivity.MyAdapter adapter = new CarActivity.MyAdapter(this,onDescription,onDescriptione,image);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent estate = new Intent(CarActivity.this,RentFormActivity.class);
+                startActivity(estate);
+
+            }
+        });
 
     }
     class MyAdapter extends ArrayAdapter<String> {

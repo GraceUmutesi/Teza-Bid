@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         animation.addFrame(getResources().getDrawable(R.drawable.bedr), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.car), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.iphone), 3000);
-//        animation.addFrame(getResources().getDrawable(R.drawable.fri), 3000);
+        animation.addFrame(getResources().getDrawable(R.drawable.fri), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.ca), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.dr), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.jeans), 3000);
@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         animation.addFrame(getResources().getDrawable(R.drawable.sa), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.sh), 3000);
         animation.addFrame(getResources().getDrawable(R.drawable.sui), 3000);
-//        animation.addFrame(getResources().getDrawable(R.drawable.wo), 3000);
+        animation.addFrame(getResources().getDrawable(R.drawable.wo), 3000);
         animation.setOneShot(false);
         ImageView imageAnim = (ImageView) findViewById(R.id.image);
         imageAnim.setBackgroundDrawable(animation);

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.teza_bid">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RoomActivity"></activity>
+        <activity android:name=".RentFormActivity"></activity>
+        <!-- <activity android:name=".PaymentActivity"></activity> -->
+        <activity android:name=".RoomActivity" />
         <activity android:name=".EstateActivity" />
         <activity android:name=".CarActivity" />
         <activity android:name=".HouseActivity" />
         <activity android:name=".HomeActivity" />
-<!--        <activity android:name=".ConfirmationActivity" />-->
-<!--        <activity android:name=".PayActivity" />-->
         <activity android:name=".RentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

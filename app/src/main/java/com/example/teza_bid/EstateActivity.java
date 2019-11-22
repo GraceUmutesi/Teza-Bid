@@ -11,14 +11,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EstateActivity extends AppCompatActivity {
 
     ListView listView;
+    ImageView imageView;
     String onDescription[] = {"Price:120,00Rwf/day" , "Price:100,00Rwf/day", "Price:200,00Rwf/day", "Price:170,00Rwf/day", "Price:300,00Rwf/day", "Price:350,00Rwf/day"};
     int image[]={R.drawable.chair7,
             R.drawable.chair4,
@@ -32,11 +35,22 @@ public class EstateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estate);
         listView =(ListView) findViewById(R.id.listview);
+        imageView = (ImageView) findViewById(R.id.viewe);
 
         EstateActivity.MyAdapter adapter = new EstateActivity.MyAdapter(this,onDescription,image);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    Intent estate = new Intent(EstateActivity.this,RentFormActivity.class);
+                    startActivity(estate);
+
+            }
+        });
 
     }
+
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
@@ -61,14 +75,6 @@ public class EstateActivity extends AppCompatActivity {
             return row;
         }
     }
-//     listview.setOnItemClickListener(new OnItemClickListener(){
-//        @Override
-//        public void onItemClick(AdapterView<?>adapter,View v, int position){
-//            ItemClicked item = adapter.getItemAtPosition(position);
-//
-//            Intent intent = new Intent(Activity.this,destinationActivity.class);
-//            startActivity(intent);
-//        }
-//    }
+
 
 }
