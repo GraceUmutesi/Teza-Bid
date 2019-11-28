@@ -32,14 +32,18 @@
             android:layout_width="300dp"
             android:layout_height="99dp"
             android:layout_margin="20dp"
-            android:src="@drawable/mtn1" />
+            android:src="@drawable/mtn1"
+            android:background="@drawable/payments"/>
 
         <ImageButton
             android:id="@+id/airteltigo"
             android:layout_width="170dp"
             android:layout_height="90dp"
             android:layout_margin="20dp"
-            android:src="@drawable/airteltigo" />
+            android:src="@drawable/airteltigo"
+            android:background="@drawable/payments"/>
+
+
 
 
     </RadioGroup>

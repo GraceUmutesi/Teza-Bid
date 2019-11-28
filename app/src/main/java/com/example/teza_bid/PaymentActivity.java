@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +33,9 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
         Animation bounce = AnimationUtils.loadAnimation(this,R.anim.bounce);
         mtn.startAnimation(bounce);
+
+        Animation lefttoright = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
+        airteltigo.startAnimation(lefttoright);
     }
 
 
@@ -47,17 +51,20 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                 return;
             }
             startActivity(intentCall);
+            Toast.makeText(PaymentActivity.this, "Please, add # and proceed with payments!", Toast.LENGTH_LONG).show();
         }
 
         else if (view == airteltigo){
             Intent intent = new Intent(Intent.ACTION_DIAL);
-            intent.setData(Uri.parse("tel:*182*4*44444#"));
+            intent.setData(Uri.parse("tel:*182*4*1*44444#"));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
                     Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
                 return;
             }
             startActivity(intent);
+            Toast.makeText(PaymentActivity.this, "Please, add # and proceed with payments!", Toast.LENGTH_LONG).show();
+
         }
 
     }

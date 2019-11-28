@@ -41,7 +41,7 @@
             android:hint="Name"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <EditText
@@ -55,7 +55,7 @@
             android:inputType="textEmailAddress"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <EditText
@@ -69,7 +69,7 @@
             android:inputType="textPassword"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <EditText
@@ -83,7 +83,7 @@
             android:inputType="textPassword"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <RelativeLayout
