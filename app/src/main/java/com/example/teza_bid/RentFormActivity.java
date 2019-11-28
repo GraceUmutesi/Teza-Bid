@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +44,13 @@ public class RentFormActivity extends AppCompatActivity {
            mButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-                   Intent rent = new Intent(RentFormActivity.this,ContactActivity.class);
+                   Intent rent = new Intent(Intent.ACTION_SEND);
+                   rent.setData(Uri.parse("mailto:"));
+                   String to = "rwakaemma34@gmail.com";
+                   rent.putExtra(Intent.EXTRA_EMAIL, to);
+                   rent.putExtra(Intent.EXTRA_SUBJECT, "Rent Confirmation");
+                   rent.putExtra(Intent.EXTRA_TEXT, "Hi,I wanted more information about the item");
+                   rent.setType("message/rfc822");
                    startActivity(rent);
 
                }
