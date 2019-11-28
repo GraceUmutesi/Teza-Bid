@@ -9,6 +9,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 import butterknife.BindView;
@@ -17,7 +19,7 @@ import butterknife.ButterKnife;
 public class PaymentActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.mtn) ImageButton mtn;
-    @BindView(R.id.cash) ImageButton cash;
+    @BindView(R.id.airteltigo) ImageButton airteltigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,10 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
         ButterKnife.bind(this);
         mtn.setOnClickListener(this);
-        cash.setOnClickListener(this);
+        airteltigo.setOnClickListener(this);
+
+        Animation bounce = AnimationUtils.loadAnimation(this,R.anim.bounce);
+        mtn.startAnimation(bounce);
     }
 
 
@@ -34,14 +39,26 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         if (view == mtn){
 //            Uri number = Uri.parse("tel:*182*3*123"+"tel:#");
-            Intent intentCall = new Intent(Intent.ACTION_CALL);
-            intentCall.setData(Uri.parse("tel:*182*3*123"+"tel:#"));
+            Intent intentCall = new Intent(Intent.ACTION_DIAL);
+            intentCall.setData(Uri.parse("tel:*182*3*12345#"));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
-                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
                 return;
             }
             startActivity(intentCall);
         }
+
+        else if (view == airteltigo){
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:*182*4*44444#"));
+
+            if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
+                    Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+                return;
+            }
+            startActivity(intent);
+        }
+
     }
 }
