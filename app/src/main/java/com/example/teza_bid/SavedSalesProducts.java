@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,7 @@ public class SavedSalesProducts extends AppCompatActivity {
 
     private DatabaseReference mDatabaseRef;
     protected List<Member> mUploads;
-
+    private static final String TAG ="SavedSalesProducts";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +47,10 @@ public class SavedSalesProducts extends AppCompatActivity {
 
         mUploads = new ArrayList<>();
 
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Member");
+        Intent intent2 = getIntent();
+        String category = intent2.getStringExtra("category");
+        System.out.println(category);
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference(category);
 
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -54,6 +58,7 @@ public class SavedSalesProducts extends AppCompatActivity {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Member upload = postSnapshot.getValue(Member.class);
                     mUploads.add(upload);
+
                 }
 
                 mAdapter = new ArtistList(SavedSalesProducts.this, mUploads);

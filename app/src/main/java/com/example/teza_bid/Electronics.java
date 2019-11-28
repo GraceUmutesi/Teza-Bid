@@ -1,15 +1,14 @@
 package com.example.teza_bid;
 
-public class Member {
+public class Electronics {
     private String mName;
     private String mPrice;
     private String mImageUrl;
-
-    public Member() {
+    public Electronics() {
         //empty constructor needed
     }
 
-    public Member(String name, String price,String imageUrl) {
+    public Electronics(String name, String price,String imageUrl) {
         if (name.trim().equals("")) {
             name = "No Name";
         }
@@ -22,11 +21,9 @@ public class Member {
     public String getName() {
         return mName;
     }
-
     public void setName(String name) {
         mName = name;
     }
-
     public String getPrice() {
         return mPrice;
     }
@@ -42,6 +39,4 @@ public class Member {
     public void setImageUrl(String imageUrl) {
         mImageUrl = imageUrl;
     }
-
-
 }

@@ -3,26 +3,24 @@ package com.example.teza_bid;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
@@ -30,13 +28,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -45,20 +38,15 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Sales extends AppCompatActivity {
+public class Sales extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private Button mButtonChooseImage;
     private Button mButtonUpload;
     private Button mTextViewShowUploads;
-    private EditText mEditTextFileName;
     private EditText mPrice;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
@@ -67,27 +55,48 @@ public class Sales extends AppCompatActivity {
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
-
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
+    private static final String TAG ="Sales";
     private StorageTask mUploadTask;
-   
+   private Button mView;
+
+   Spinner category;
+   private String data;
+    @BindView(R.id.nameOfUserEditText) EditText mEditTextFileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales);
+        ButterKnife.bind(this);
         mButtonChooseImage = findViewById(R.id.choose);
         mButtonUpload = findViewById(R.id.createUserButton);
         mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
-        mEditTextFileName = findViewById(R.id.nameOfUserEditText);
+        mView=findViewById(R.id.View);
         mPrice=findViewById(R.id.priceOfUserEditText);
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
+        category = (Spinner) findViewById(R.id.spinner1);
+
+
         /*mRecyclerView = findViewById(R.id.recycler_view);
         nameOfTheProduct=(EditText)findViewById(R.id.nameOfUserEditText);
         price=(EditText)findViewById(R.id.priceOfUserEditText);*/
       /*  url=(EditText)findViewById(R.id.)*/
 
         mStorageRef=FirebaseStorage.getInstance().getReference("Images");
-        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Member");
+
+//this is my spinner containing a set of data
+        String[] items = new String[]{"Office and Supplies","Furniture","Automobiles and Motorycles","Electronics","Arts and Decoration","Entertainment","Other Accessories"};
+        Spinner dropdown = findViewById(R.id.spinner1);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
+
+
+/*if(data=="Office and School supplies"){
+    mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("OfficeAndSchoolSupplies");
+}
+else */
         /*ch=(Button)findViewById(R.id.choose);
         up=(Button)findViewById(R.id.createUserButton);
         mImageView = findViewById(R.id.post_image);
@@ -97,6 +106,7 @@ public class Sales extends AppCompatActivity {
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Filechooser();
 
             }
@@ -109,6 +119,30 @@ public class Sales extends AppCompatActivity {
                 if (mUploadTask != null && mUploadTask.isInProgress()) {
                     Toast.makeText(Sales.this, "Upload in progress", Toast.LENGTH_SHORT).show();
                 } else {
+                    data =category.getSelectedItem().toString();
+                    if(data =="Office and Supplies"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("OfficeSupplies");
+                    }
+                    if(data =="Furniture"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Furniture");
+                    }
+                    if(data =="Automobiles and Motorycles"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("AutomobilesAndMotorycles");
+                    }
+                    if(data =="Electronics"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Electronics");
+                    }
+                    if(data =="Arts and Decoration"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("ArtsAndDeco");
+                    }
+                    if(data =="Entertainment"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Entertainment");
+                    }
+                    if(data =="Other Accessories"){
+                        mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("OtherAccessories");
+                    }
+
+
                     Fileuploader();
                 }
             }
@@ -123,6 +157,15 @@ public class Sales extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openImagesActivity();
+            }
+        });
+        mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Sales.this, SampleActivity.class);
+
+                startActivity(intent);
             }
         });
 
@@ -152,7 +195,57 @@ public class Sales extends AppCompatActivity {
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text= parent.getItemAtPosition(position).toString();
+        /*mPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor=mPreferences.edit();
+        mEditor.putString("key",text);
+        mEditor.commit();
+        String name =mPreferences.getString("key","default");
+        Log.d(TAG,"onCreate:name: " + name);*/
+      /*  switch (position) {
+            case 0:
+                // Whatever you want to happen when the first item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("OfficeAndSchoolSupplies");
+                break;
+            case 1:
+                // Whatever you want to happen when the second item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Furniture");
+                break;
+            case 2:
+                // Whatever you want to happen when the thrid item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("AutomobilesAndMotorycles");
+                break;
+            case 3:
+                // Whatever you want to happen when the first item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Electronics");
+                break;
+            case 4:
+                // Whatever you want to happen when the second item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Furniture");
+                break;
+            case 5:
+                // Whatever you want to happen when the thrid item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Entertainment");
+                break;
+            case 6:
+                // Whatever you want to happen when the first item gets selected
+                mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("OtherAccessories");
+                break;
+
+
+        }*/
+        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
     private void Fileuploader(){
+
         if (mImageUri != null) {
             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
@@ -200,8 +293,23 @@ public class Sales extends AppCompatActivity {
                                             Member upload = new Member(mEditTextFileName.getText().toString().trim(),
                                                     mPrice.getText().toString().trim(),
                                                     downloadUri.toString());
+
+                                            Intent intent1 = new Intent(Sales.this,SavedSalesProducts.class);
+                                          /*  intent1.putExtra("data", data);*/
                                             String uploadId = mDatabaseRef.push().getKey();
                                             mDatabaseRef.child(uploadId).setValue(upload);
+
+                                            mPreferences=getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                                            mEditor=mPreferences.edit();
+                                            String NAME=upload.getName();
+                                            Intent intent2 = new Intent(Sales.this,SampleActivity.class);
+                                            intent2.putExtra("NAME", NAME);
+                                            mEditor.putString("key",NAME);
+                                            mEditor.commit();
+                                            String name =mPreferences.getString("key","default");
+                                            Log.d(TAG,":name: " + NAME);
+                                            startActivity(intent2);
+
                                         } else
                                         {
                                             Toast.makeText(Sales.this, "upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -239,6 +347,9 @@ public class Sales extends AppCompatActivity {
         Intent intent = new Intent(this, SavedSalesProducts.class);
         startActivity(intent);
     }
+
+
+
 
 }
 

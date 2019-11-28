@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Teza-Bid</string>
+    <!-- <string-array name="Categories">
+        <item>Choose a category</item>
+        <item>Office and School supplies</item>
+        <item>Furniture</item>
+        <item>Automobiles and Motorycles</item>
+        <item>Electronics</item>
+        <item>Arts and Decoration</item>
+        <item>Entertainment</item>
+        <item>Other Accessories</item>
+    </string-array>-->
+    <string name="name">com.example.teza_bid.name</string>
 </resources>

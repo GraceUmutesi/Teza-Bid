@@ -64,13 +64,20 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@android:color/white"
-
             android:hint="price"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorPrimary"
             android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+
+
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -81,11 +88,19 @@
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="16dp" />
         <Button
+            android:id="@+id/View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/text_view_show_uploads"
+
+            android:text="View"
+            android:textSize="16sp" />
+        <Button
             android:id="@+id/createUserButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@color/colorAccent"
+            android:background="@android:color/darker_gray"
             android:padding="10dp"
             android:text="Save"
             android:textColor="@color/colorPrimary" />
@@ -94,13 +109,12 @@
             android:id="@+id/text_view_show_uploads"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginStart="205dp"
             android:layout_marginLeft="25dp"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="Show Uploads"
             android:textSize="16sp" />
-
 
     </LinearLayout>
 
