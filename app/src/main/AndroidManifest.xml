@@ -7,13 +7,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Tera-Bid"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RentFormActivity"></activity>
-        <!-- <activity android:name=".PaymentActivity"></activity> -->
+        <activity android:name=".ContactActivity"></activity>
+        <activity android:name=".RentFormActivity" />
         <activity android:name=".RoomActivity" />
         <activity android:name=".EstateActivity" />
         <activity android:name=".CarActivity" />
