@@ -56,7 +56,8 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
         else if (view == airteltigo){
             Intent intent = new Intent(Intent.ACTION_DIAL);
-            intent.setData(Uri.parse("tel:*182*4*1*44444#"));
+            String number="tel:*182*4*1*44444/#";
+            intent.setData(Uri.parse(number));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
                     Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
