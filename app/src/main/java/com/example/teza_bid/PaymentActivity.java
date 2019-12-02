@@ -42,9 +42,9 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         if (view == mtn){
-//            Uri number = Uri.parse("tel:*182*3*123"+"tel:#");
-            Intent intentCall = new Intent(Intent.ACTION_DIAL);
-            intentCall.setData(Uri.parse("tel:*182*3*12345#"));
+
+            Intent intentCall = new Intent(Intent.ACTION_CALL);
+            intentCall.setData(Uri.parse(Uri.parse("tel:*182*8*1*12345")+Uri.encode("#")));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
                     Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
@@ -55,9 +55,8 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         else if (view == airteltigo){
-            Intent intent = new Intent(Intent.ACTION_DIAL);
-            String number="tel:*182*4*1*44444/#";
-            intent.setData(Uri.parse(number));
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(Uri.parse(Uri.parse("tel:*182*4*1*44444")+Uri.encode("#")));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
                     Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
