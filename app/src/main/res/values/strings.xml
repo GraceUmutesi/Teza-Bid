@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Teza-Bid</string>
+    <string name="app_name">Tera-Bid</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -8,9 +8,12 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Sell</string>
-    <string name="menu_slideshow">Buy</string>
-    <string name="menu_tools">Rent</string>
-    <string name="menu_share">Rate</string>
-    <string name="menu_send">Help</string>
+    <string name="menu_sell">Sell</string>
+    <string name="menu_bid">Bid</string>
+    <string name="menu_rent">Rent</string>
+    <string name="menu_rate">Rate</string>
+    <string name="menu_help">Help</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

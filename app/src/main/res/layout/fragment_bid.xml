@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.bid.BidFragment"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_marginBottom="0dp"
+    android:background="#E0E0E0">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="150dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BID BY CATEGORIES"
+                android:textSize="25dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/device"
+                    android:layout_width="147dp"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="35dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/appliences" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/text_slideshow"
+                            android:text="Electronic "
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/furniture"
+                    android:layout_width="147dp"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="35dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="110dp"
+                            android:layout_height="90dp"
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/furnitures" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Furniture"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kit"
+                    android:layout_width="147dp"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="35dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:alpha="0.9"
+
+                            android:src="@drawable/kitchen" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Kitchen accessories"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Deco"
+                    android:layout_width="147dp"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="35dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/deco" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Arts and Decoration"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/book"
+                    android:layout_width="147dp"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="35dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/office" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:text="Office accessories"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fashion"
+                    android:layout_width="147dp"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="35dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:alpha="0.9"
+                            android:padding="2dp"
+                            android:src="@drawable/fashion" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="Entertainment and Fashion"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <androidx.cardview.widget.CardView
+                   android:id="@+id/car"
+                   android:layout_width="147dp"
+                   android:layout_height="180dp"
+                   android:layout_margin="10dp"
+                   android:gravity="center"
+                   android:clickable="true"
+                   android:foreground="?android:attr/selectableItemBackground"
+                   app:cardCornerRadius="35dp">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:orientation="vertical"
+                       android:layout_marginTop="5dp">
+
+                       <ImageView
+                           android:layout_width="110dp"
+                           android:layout_height="91dp"
+                           android:alpha="0.9"
+                           android:padding="2dp"
+                           android:src="@drawable/car3" />
+
+                       <View
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_margin="10dp"
+                           android:background="@color/colorAccent"/>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="10dp"
+
+                           android:text="Automobiles"
+                           android:textStyle="bold" />
+
+                   </LinearLayout>
+               </androidx.cardview.widget.CardView>
+               <androidx.cardview.widget.CardView
+                   android:id="@+id/other"
+                   android:layout_width="147dp"
+                   android:layout_height="180dp"
+                   android:layout_margin="10dp"
+                   android:gravity="center"
+                   android:clickable="true"
+                   android:foreground="?android:attr/selectableItemBackground"
+                   app:cardCornerRadius="35dp">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:orientation="vertical"
+                       android:layout_marginTop="5dp">
+                       <ImageView
+                           android:layout_width="110dp"
+                           android:layout_height="90dp"
+                           android:alpha="0.9"
+                           android:padding="2dp"
+                           android:src="@drawable/other" />
+
+                       <View
+                           android:layout_width="match_parent"
+                           android:layout_height="1dp"
+                           android:layout_margin="10dp"
+                           android:background="@color/colorAccent"/>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="10dp"
+                           android:id="@+id/Text_des"
+
+                           android:text="Other accessories"
+                           android:textStyle="bold" />
+
+                   </LinearLayout>
+               </androidx.cardview.widget.CardView>
+           </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

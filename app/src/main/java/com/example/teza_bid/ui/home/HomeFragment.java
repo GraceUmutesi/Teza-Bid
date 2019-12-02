@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -54,6 +55,8 @@ public class HomeFragment extends Fragment {
         ImageView imageAnim = (ImageView) root.findViewById(R.id.image);
         imageAnim.setBackgroundDrawable(animation);
         animation.start();
+
+
         return root;
     }
 }

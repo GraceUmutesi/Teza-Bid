@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "559792651820",
+    "firebase_url": "https://teza-bid.firebaseio.com",
+    "project_id": "teza-bid",
+    "storage_bucket": "teza-bid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559792651820:android:8635acf5b14eb59bcbdb89",
+        "android_client_info": {
+          "package_name": "com.example.teza_bid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559792651820-st0unik4u0610u0dutconubnqnl6ob68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teza_bid",
+            "certificate_hash": "f231bb436a0dc8689f758c44ab23df1f386cf5ae"
+          }
+        },
+        {
+          "client_id": "559792651820-es5dava2pe1mcqq9q0rkjslkcu58hss7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teza_bid",
+            "certificate_hash": "b58af46e009b189460ce5f6be017825b6b93546c"
+          }
+        },
+        {
+          "client_id": "559792651820-m8l89kl8hl3hunodal43crpc55l4i7k7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teza_bid",
+            "certificate_hash": "f699174ec7326fe493a1743810de6af0aae5f481"
+          }
+        },
+        {
+          "client_id": "559792651820-0rvmekc12vq3h2699qsn7k1npdv9pied.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBexglVW_I5xqIUE624PLgpui5tmR984cA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559792651820-0rvmekc12vq3h2699qsn7k1npdv9pied.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

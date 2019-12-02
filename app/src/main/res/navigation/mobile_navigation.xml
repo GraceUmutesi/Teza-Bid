@@ -13,31 +13,31 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.teza_bid.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.example.teza_bid.ui.sell.SellFragment"
+        android:label="@string/menu_sell"
+        tools:layout="@layout/fragment_sell" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.teza_bid.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.example.teza_bid.ui.bid.BidFragment"
+        android:label="@string/menu_bid"
+        tools:layout="@layout/fragment_bid" />
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="com.example.teza_bid.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:name="com.example.teza_bid.ui.rent.RentFragment"
+        android:label="@string/menu_rent"
+        tools:layout="@layout/fragment_help" />
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.example.teza_bid.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        android:name="com.example.teza_bid.ui.rate.RateFragment"
+        android:label="@string/menu_rate"
+        tools:layout="@layout/fragment_rate" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.example.teza_bid.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:name="com.example.teza_bid.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_rent" />
 </navigation>
