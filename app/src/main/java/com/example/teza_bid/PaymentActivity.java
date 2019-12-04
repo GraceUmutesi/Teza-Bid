@@ -43,7 +43,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         if (view == mtn){
 
-            Intent intentCall = new Intent(Intent.ACTION_CALL);
+            Intent intentCall = new Intent(Intent.ACTION_DIAL);
             intentCall.setData(Uri.parse(Uri.parse("tel:*182*8*1*303030")+Uri.encode("#")));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
@@ -56,7 +56,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         else if (view == airteltigo){
-            Intent intent = new Intent(Intent.ACTION_CALL);
+            Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse(Uri.parse("tel:*182*4*1*3030")+Uri.encode("#")));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
