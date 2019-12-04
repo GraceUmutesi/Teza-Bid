@@ -44,26 +44,28 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         if (view == mtn){
 
             Intent intentCall = new Intent(Intent.ACTION_CALL);
-            intentCall.setData(Uri.parse(Uri.parse("tel:*182*8*1*12345")+Uri.encode("#")));
+            intentCall.setData(Uri.parse(Uri.parse("tel:*182*8*1*303030")+Uri.encode("#")));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
                     Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
                 return;
             }
+//            mtn.setEnabled(true);
             startActivity(intentCall);
-            Toast.makeText(PaymentActivity.this, "Please, add # and proceed with payments!", Toast.LENGTH_LONG).show();
+//            Toast.makeText(PaymentActivity.this, "Please, add # and proceed with payments!", Toast.LENGTH_LONG).show();
         }
 
         else if (view == airteltigo){
             Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse(Uri.parse("tel:*182*4*1*44444")+Uri.encode("#")));
+            intent.setData(Uri.parse(Uri.parse("tel:*182*4*1*3030")+Uri.encode("#")));
 
             if (ActivityCompat.checkSelfPermission(PaymentActivity.this,
                     Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
                 return;
             }
+//            airteltigo.setEnabled(true);
             startActivity(intent);
-            Toast.makeText(PaymentActivity.this, "Please, add # and proceed with payments!", Toast.LENGTH_LONG).show();
+//            Toast.makeText(PaymentActivity.this, "Please, add # and proceed with payments!", Toast.LENGTH_LONG).show();
 
         }
 
