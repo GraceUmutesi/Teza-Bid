@@ -18,13 +18,10 @@ import android.widget.TextView;
 
 public class RoomActivity extends AppCompatActivity {
     ListView listView;
-    String onDescription[] = {"Location:Gasabo,Gisozi" , "Location:Rusizi,Cyangugu", "Location:Karongi,Kibuye", "Location:Rubavu,Gisenyi", "Location:Kicukiro,Sonatubes", "Location:Gasabo,Kacyiru"};
-    String onDescriptione[] = {"Price:10,000Rwf/night" , "Price:7,000Rwf/night",  "Price:12,000Rwf/night",  "Price:12,000Rwf/night",  "Price:20,000Rwf/night",  "Price:15,000Rwf/month"};
+    String onDescription[] = {"Location:Gasabo,Gisozi" , "Location:Karongi,Kibuye", "Location:Nyamata,Bugesera"};
+    String onDescriptione[] = {"Price:12,000Rwf/night" , "Price:8,000Rwf/night",  "Price:10,000Rwf/night"};
     int image[]={R.drawable.room2,
-                R.drawable.room3,
             R.drawable.room6,
-            R.drawable.room4,
-            R.drawable.room5,
             R.drawable.room8,
 
     };
@@ -42,8 +39,19 @@ public class RoomActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent estate = new Intent(RoomActivity.this,RentFormActivity.class);
-                startActivity(estate);
+                if (position == 0) {
+
+                    Intent room = new Intent(RoomActivity.this, Rent3FormActivity.class);
+                    startActivity(room);
+                }
+                if (position == 1){
+                    Intent room1 = new Intent(RoomActivity.this, Rent6FormActivity.class);
+                    startActivity(room1);
+                }
+                if (position == 2){
+                    Intent room2 = new Intent(RoomActivity.this, Rent7FormActivity.class);
+                    startActivity(room2);
+                }
 
             }
         });

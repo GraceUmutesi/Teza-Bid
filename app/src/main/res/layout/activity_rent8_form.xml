@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RentFormActivity">
+    tools:context=".Rent8FormActivity">
     <ImageView
-        android:id="@+id/img"
-        android:src="@drawable/oonee"
+        android:id="@+id/img7"
+        android:src="@drawable/es1"
         android:layout_width="177dp"
         android:layout_height="300dp" />
     <ImageView
-        android:id="@+id/img1"
-        android:src="@drawable/bat"
-        android:layout_toRightOf="@+id/img"
+        android:id="@+id/img8"
+        android:src="@drawable/es2"
+        android:layout_toRightOf="@+id/img7"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginLeft="8dp"
 
         />
     <ImageView
-        android:id="@+id/img2"
-        android:src="@drawable/bed"
-        android:layout_below="@+id/img"
+        android:id="@+id/img9"
+        android:src="@drawable/es3"
+        android:layout_below="@+id/img7"
         android:layout_width="200dp"
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-150dp"
-       />
+        />
 
     <TextView
-        android:id="@+id/desc"
+        android:id="@+id/descii"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img"
-        android:layout_marginLeft="55dp"
+        android:layout_below="@+id/img7"
+        android:layout_marginLeft="65dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="15dp"
-        android:text="The house has 3 main rooms, 1 bathroom, 1 kitchen, a beautiful living room and a garden."
+        android:text="Folding chairs can be used in weddings,business dinner and any other events"
         android:textColor="@android:color/black"
         android:textSize="15dp" />
 
     <Button
-        android:id="@+id/but"
-        android:layout_below="@+id/desc"
+        android:id="@+id/butto"
+        android:layout_below="@+id/descii"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Mail us"
+        android:text="Pay"
         android:textColor="@android:color/black"/>
 </RelativeLayout>

@@ -11,15 +11,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-
-public class RentFormActivity extends AppCompatActivity {
+public class Rent4FormActivity extends AppCompatActivity {
 
     TextView textView;
     Button mButton;
@@ -28,29 +25,29 @@ public class RentFormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rent_form);
+        setContentView(R.layout.activity_rent4_form);
         textView =(TextView) findViewById(R.id.desc);
         imageView = (ImageView) findViewById(R.id.img);
         mButton = (Button) findViewById(R.id.but);
 
 
 
-           mButton.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
-                   Intent chooser = null;
-                   Intent rent = new Intent(Intent.ACTION_SEND);
-                   rent.setData(Uri.parse("mailto:"));
-                   rent.putExtra(Intent.EXTRA_EMAIL, new String[] {"ahiode6@gmail.com"});
-                   rent.putExtra(Intent.EXTRA_SUBJECT, "Rent Information");
-                   rent.putExtra(Intent.EXTRA_TEXT, "Hi,I wanted more information about the item");
-                   rent.setType("text/plain");
-                   startActivity(Intent.createChooser(rent, "Choose Email Client"));
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent chooser = null;
+                Intent rent = new Intent(Intent.ACTION_SEND);
+                rent.setData(Uri.parse("mailto:"));
+                rent.putExtra(Intent.EXTRA_EMAIL, new String[] {"ahiode6@gmail.com"});
+                rent.putExtra(Intent.EXTRA_SUBJECT, "Rent Information");
+                rent.putExtra(Intent.EXTRA_TEXT, "Hi,I wanted more information about the item");
+                rent.setType("text/plain");
+                startActivity(Intent.createChooser(rent, "Choose Email Client"));
 
-           }
-
-           });
             }
+
+        });
+    }
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
@@ -67,7 +64,7 @@ public class RentFormActivity extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater =(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.activity_rent_form,parent,false);
+            View row = layoutInflater.inflate(R.layout.activity_rent4_form,parent,false);
             ImageView images = row.findViewById(R.id.img);
             TextView myDescription = row.findViewById(R.id.desc);
             images.setImageResource(image[position]);

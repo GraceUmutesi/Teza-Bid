@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RentFormActivity">
+    tools:context=".Rent4FormActivity">
     <ImageView
         android:id="@+id/img"
-        android:src="@drawable/oonee"
+        android:src="@drawable/livv1"
         android:layout_width="177dp"
         android:layout_height="300dp" />
     <ImageView
         android:id="@+id/img1"
-        android:src="@drawable/bat"
+        android:src="@drawable/bedii"
         android:layout_toRightOf="@+id/img"
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -21,13 +21,13 @@
         />
     <ImageView
         android:id="@+id/img2"
-        android:src="@drawable/bed"
+        android:src="@drawable/bathh"
         android:layout_below="@+id/img"
         android:layout_width="200dp"
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-150dp"
-       />
+        />
 
     <TextView
         android:id="@+id/desc"
@@ -37,7 +37,7 @@
         android:layout_marginLeft="55dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="15dp"
-        android:text="The house has 3 main rooms, 1 bathroom, 1 kitchen, a beautiful living room and a garden."
+        android:text="The house has 2 medium rooms, 1 bathroom, a beautiful living room and a kitchen aside."
         android:textColor="@android:color/black"
         android:textSize="15dp" />
 

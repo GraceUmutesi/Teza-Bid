@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivityForBuyer">
+
+    <ImageView
+        android:id="@+id/logImage"
+        android:layout_width="400dp"
+        android:layout_height="223dp"
+        app:srcCompat="@drawable/loginb"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:layout_below="@+id/logImage"
+        android:layout_marginTop="-22dp"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/buyerEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            android:ems="10"
+            android:hint="Your email here..."
+            android:inputType="textEmailAddress"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="384dp" />
+
+        <EditText
+            android:id="@+id/buyerPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buyerEmail"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:ems="10"
+            android:hint="Your password here..."
+            android:inputType="textPassword"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="495dp" />
+
+
+        <Button
+            android:id="@+id/buyeLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buyerPassword"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button"
+            android:text="Login"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="573dp" />
+
+        <TextView
+            android:id="@+id/newUserTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buyeLoginButton"
+            android:layout_marginTop="24dp"
+            android:text="New user? Register here"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="645dp" />
+    </RelativeLayout>
+</RelativeLayout>

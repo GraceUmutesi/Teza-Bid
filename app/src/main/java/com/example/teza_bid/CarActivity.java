@@ -18,14 +18,13 @@ import android.widget.TextView;
 
 public class CarActivity extends AppCompatActivity {
     ListView listView;
-    String onDescription[] = {"Type:Forunner" , "Type:Land Rover Defender", "Type:Rav 4", "Type:Range Rover", "Type:Benz Mercedes", "Type:VolksWagen"};
-    String onDescriptione[] = {"Price:100,000Rwf/day" , "Price:120,000Rwf/day",  "Price:90,000Rwf/day",  "Price:150,000Rwf/day",  "Price:100,000Rwf/day",  "Price:80,000Rwf/day"};
-    int image[]={R.drawable.forri,
+    String onDescription[] = {"Type:Land Rover Defender" , "Type:Range Rover", "Type:Benz Mercedes"};
+    String onDescriptione[] = {"Price:100,000Rwf/day" , "Price:120,000Rwf/day",  "Price:80,000Rwf/day"};
+    int image[]={
               R.drawable.land1,
-            R.drawable.rav,
-            R.drawable.range,
-            R.drawable.benz,
-            R.drawable.volks,
+              R.drawable.range,
+              R.drawable.benz,
+
    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +40,23 @@ public class CarActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent estate = new Intent(CarActivity.this,RentFormActivity.class);
-                startActivity(estate);
+                if (position == 0) {
+
+                    Intent car = new Intent(CarActivity.this, Rent1FormActivity.class);
+                    startActivity(car);
+                }
+                if (position == 1){
+                    Intent car1 = new Intent(CarActivity.this, Rent6FormActivity.class);
+                    startActivity(car1);
+                }
+                if (position == 2){
+                    Intent car2 = new Intent(CarActivity.this, Rent7FormActivity.class);
+                    startActivity(car2);
+                }
 
             }
+
+
         });
 
     }

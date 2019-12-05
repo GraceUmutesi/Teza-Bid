@@ -22,13 +22,10 @@ public class EstateActivity extends AppCompatActivity {
 
     ListView listView;
     ImageView imageView;
-    String onDescription[] = {"Price:120,00Rwf/day" , "Price:100,00Rwf/day", "Price:200,00Rwf/day", "Price:170,00Rwf/day", "Price:300,00Rwf/day", "Price:350,00Rwf/day"};
+    String onDescription[] = {"Price:100,00Rwf/day", "Price:200,00Rwf/day", "Price:300,00Rwf/day"};
     int image[]={R.drawable.chair7,
-            R.drawable.chair4,
             R.drawable.chair6,
-            R.drawable.chair3,
             R.drawable.chair5,
-            R.drawable.chair1,
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +39,19 @@ public class EstateActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
 
-                    Intent estate = new Intent(EstateActivity.this,RentFormActivity.class);
+                    Intent estate = new Intent(EstateActivity.this, Rent2FormActivity.class);
                     startActivity(estate);
-
+                }
+                if (position == 1){
+                    Intent estate1 = new Intent(EstateActivity.this, Rent8FormActivity.class);
+                    startActivity(estate1);
+                }
+                if (position == 2){
+                    Intent estate2 = new Intent(EstateActivity.this, Rent9FormActivity.class);
+                    startActivity(estate2);
+                }
             }
         });
 
