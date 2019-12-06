@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img7"
-        android:layout_marginLeft="65dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="15dp"
         android:text="Folding chairs can be used in weddings,business dinner and any other events"
