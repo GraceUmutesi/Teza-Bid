@@ -22,10 +22,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivityForBuyer extends AppCompatActivity implements View.OnClickListener{
-    @BindView(R.id.buyerEmail) EditText loginEmail;
-    @BindView(R.id.buyerPassword) EditText loginPassword;
-    @BindView(R.id.buyeLoginButton) Button loginButton;
-    @BindView(R.id.newUserTextView)TextView toSignUp;
+    EditText loginEmail;
+    EditText loginPassword;
+    Button loginButton;
+    TextView toSignUp;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -36,9 +36,27 @@ public class LoginActivityForBuyer extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_for_buyer);
-        ButterKnife.bind(this);
-        toSignUp.setOnClickListener(this);
-        loginButton.setOnClickListener(this);
+        loginPassword = (EditText) findViewById(R.id.buyerPassword);
+        loginEmail = (EditText) findViewById(R.id.buyerEmail);
+        toSignUp=(TextView)findViewById(R.id.newUserTextView);
+        loginButton=(Button)findViewById(R.id.buyeLoginButton) ;
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginWithPassword();
+            Intent intent = new Intent(LoginActivityForBuyer.this, PaymentActivity.class);
+            startActivity(intent);
+
+            }
+        });
+        toSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivityForBuyer.this, SignupActivityForBuyer.class);
+                startActivity(intent);
+
+            }
+        });
 
         firebaseAuth=FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -46,7 +64,7 @@ public class LoginActivityForBuyer extends AppCompatActivity implements View.OnC
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null){
-                    Intent intent = new Intent(LoginActivityForBuyer.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivityForBuyer.this, PaymentActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
@@ -66,17 +84,13 @@ public class LoginActivityForBuyer extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        if (v == toSignUp){
-            Intent intent = new Intent(LoginActivityForBuyer.this, SignupActivityForBuyer.class);
-            startActivity(intent);
-            finish();
-        }
 
-        if (v == loginButton){
-            loginWithPassword();
-            Intent intent = new Intent(LoginActivityForBuyer.this, PaymentActivity.class);
-            startActivity(intent);
-        }
+
+//        if (v == loginButton){
+//            loginWithPassword();
+//            Intent intent = new Intent(LoginActivityForBuyer.this, PaymentActivity.class);
+//            startActivity(intent);
+//        }
     }
 
     private void loginWithPassword(){

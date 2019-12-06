@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rent10FormActivity">
+    tools:context=".Rent11FormActivity">
     <ImageView
         android:id="@+id/imgi1"
-        android:src="@drawable/bediii"
+        android:src="@drawable/beedd"
         android:layout_width="177dp"
         android:layout_height="300dp" />
     <ImageView
         android:id="@+id/imgi2"
-        android:src="@drawable/bet"
+        android:src="@drawable/bathii"
         android:layout_toRightOf="@+id/imgi1"
         android:layout_width="270dp"
         android:layout_height="300dp"
@@ -27,7 +27,7 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
-        android:text="A medium room,with 2 beds, a bathroom and a wardrobe"
+        android:text="A big room,with 1 bed, a bathroom and a wardrobe"
         android:textColor="@android:color/black"
         android:textSize="15dp" />
 

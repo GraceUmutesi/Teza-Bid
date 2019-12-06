@@ -50,10 +50,10 @@
 
         <Button
             android:id="@+id/buyeLoginButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="124dp"
+            android:layout_height="29dp"
             android:layout_below="@+id/buyerPassword"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="9dp"
             android:background="@drawable/button"
             android:text="Login"
             tools:ignore="MissingConstraints"
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/buyeLoginButton"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="18dp"
             android:text="New user? Register here"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints"

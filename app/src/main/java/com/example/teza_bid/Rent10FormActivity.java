@@ -1,8 +1,19 @@
 package com.example.teza_bid;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Rent10FormActivity extends AppCompatActivity {
 
@@ -22,7 +33,7 @@ public class Rent10FormActivity extends AppCompatActivity {
         mButtonn1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent rent3 = new Intent(Rent10FormActivity.this,MainActivity.class);
+                Intent rent3 = new Intent(Rent10FormActivity.this,LoginActivityForBuyer.class);
                 startActivity(rent3);
             }
 

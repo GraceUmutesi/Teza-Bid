@@ -19,15 +19,18 @@ import butterknife.ButterKnife;
 
 public class PaymentActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.mtn) ImageButton mtn;
-    @BindView(R.id.airteltigo) ImageButton airteltigo;
+     ImageButton mtn;
+     ImageButton airteltigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
+
+        mtn = (ImageButton) findViewById(R.id.mtn);
+        airteltigo = (ImageButton) findViewById(R.id.airteltigo);
         mtn.setOnClickListener(this);
         airteltigo.setOnClickListener(this);
 

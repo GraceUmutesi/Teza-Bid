@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class RoomActivity extends AppCompatActivity {
     ListView listView;
     String onDescription[] = {"Location:Gasabo,Gisozi" , "Location:Karongi,Kibuye", "Location:Nyamata,Bugesera"};
-    String onDescriptione[] = {"Price:12,000Rwf/night" , "Price:8,000Rwf/night",  "Price:10,000Rwf/night"};
+    String onDescriptione[] = {"Price:12,000Rwf/night" , "Price:15,000Rwf/night",  "Price:13,000Rwf/night"};
     int image[]={R.drawable.room2,
             R.drawable.room6,
             R.drawable.room8,
@@ -45,11 +45,11 @@ public class RoomActivity extends AppCompatActivity {
                     startActivity(room);
                 }
                 if (position == 1){
-                    Intent room1 = new Intent(RoomActivity.this, Rent6FormActivity.class);
+                    Intent room1 = new Intent(RoomActivity.this, Rent10FormActivity.class);
                     startActivity(room1);
                 }
                 if (position == 2){
-                    Intent room2 = new Intent(RoomActivity.this, Rent7FormActivity.class);
+                    Intent room2 = new Intent(RoomActivity.this, Rent11FormActivity.class);
                     startActivity(room2);
                 }
 

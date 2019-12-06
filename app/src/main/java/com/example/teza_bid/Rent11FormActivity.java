@@ -15,26 +15,26 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Rent8FormActivity extends AppCompatActivity {
+public class Rent11FormActivity extends AppCompatActivity {
 
-    TextView texte;
-    Button mButtonn;
-    ImageView imagee;
+    TextView texte1;
+    Button mButtonn1;
+    ImageView imagee1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rent8_form);
-        texte = (TextView) findViewById(R.id.descii);
-        imagee = (ImageView) findViewById(R.id.img7);
-        mButtonn = (Button) findViewById(R.id.butto);
+        setContentView(R.layout.activity_rent11_form);
+        texte1 = (TextView) findViewById(R.id.descii1);
+        imagee1 = (ImageView) findViewById(R.id.imgi1);
+        mButtonn1 = (Button) findViewById(R.id.butto1);
 
 
-        mButtonn.setOnClickListener( new View.OnClickListener() {
+        mButtonn1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent rent2 = new Intent(Rent8FormActivity.this,LoginActivityForBuyer.class);
-                startActivity(rent2);
+                Intent rent3 = new Intent(Rent11FormActivity.this,LoginActivityForBuyer.class);
+                startActivity(rent3);
             }
 
         });
@@ -46,7 +46,7 @@ public class Rent8FormActivity extends AppCompatActivity {
         int image[];
 
         MyAdapter(Context c, String information[], int images[]) {
-            super(c, R.layout.activity_rent, R.id.descii, information);
+            super(c, R.layout.activity_rent, R.id.descii1, information);
             this.context = c;
             this.Information = information;
             this.image = images;
@@ -57,9 +57,9 @@ public class Rent8FormActivity extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.activity_rent8_form, parent, false);
-            ImageView images = row.findViewById(R.id.img7);
-            TextView myDescription = row.findViewById(R.id.descii);
+            View row = layoutInflater.inflate(R.layout.activity_rent11_form, parent, false);
+            ImageView images = row.findViewById(R.id.imgi1);
+            TextView myDescription = row.findViewById(R.id.descii1);
             images.setImageResource(image[position]);
             myDescription.setText(Information[position]);
 
@@ -70,3 +70,4 @@ public class Rent8FormActivity extends AppCompatActivity {
 
 
 }
+

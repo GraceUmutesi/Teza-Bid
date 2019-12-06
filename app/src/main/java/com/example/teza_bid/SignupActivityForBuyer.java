@@ -25,12 +25,12 @@ import butterknife.ButterKnife;
 
 public class SignupActivityForBuyer extends AppCompatActivity implements View.OnClickListener{
 
-    @BindView(R.id.createUserButton)Button newUserButton;
-    @BindView(R.id.nameEditText) EditText newUserName;
-    @BindView(R.id.emailEditText) EditText newUserEmail;
-    @BindView(R.id.passwordEditText) EditText newUserPassword;
-    @BindView(R.id.confirmPasswordEditText) EditText passConfirmation;
-    @BindView(R.id.loginTextView) TextView backToLogin;
+    Button newUserButton;
+    EditText newUserName;
+    EditText newUserEmail;
+    EditText newUserPassword;
+    EditText passConfirmation;
+    TextView backToLogin;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -41,7 +41,14 @@ public class SignupActivityForBuyer extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_for_buyer);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
+
+        newUserButton = (Button) findViewById(R.id.createUserButton);
+        newUserName = (EditText) findViewById(R.id.nameEditText);
+        newUserEmail = (EditText) findViewById(R.id.emailEditText);
+        newUserPassword = (EditText) findViewById(R.id.passwordEditText);
+        passConfirmation = (EditText) findViewById(R.id.confirmPasswordEditText);
+        backToLogin = (TextView) findViewById(R.id.loginTextView);
 
         backToLogin.setOnClickListener(this);
         newUserButton.setOnClickListener(this);

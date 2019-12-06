@@ -3,6 +3,7 @@
     package="com.example.teza_bid">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignupActivityForBuyer"></activity>
+        <activity android:name=".Rent11FormActivity"></activity>
         <activity android:name=".LoginActivityForBuyer" />
+        <activity android:name=".SignupActivityForBuyer" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".Rent10FormActivity" />
         <activity android:name=".Rent9FormActivity" />

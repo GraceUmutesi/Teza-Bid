@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rent1FormActivity">
+    tools:context=".Rent7FormActivity">
     <ImageView
         android:id="@+id/img4"
         android:src="@drawable/vo1"
@@ -47,6 +47,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Pay"
+        android:text="Get Connected"
         android:textColor="@android:color/black"/>
 </RelativeLayout>

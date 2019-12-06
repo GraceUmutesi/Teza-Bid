@@ -34,7 +34,7 @@ public class Rent1FormActivity extends AppCompatActivity {
             mButtoon.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent rent1 = new Intent(Rent1FormActivity.this,PaymentActivity.class);
+                    Intent rent1 = new Intent(Rent1FormActivity.this,LoginActivityForBuyer.class);
                     startActivity(rent1);
                 }
 
