@@ -4,11 +4,12 @@ public class OfficeAndSchoolSupplies {
     private String mName;
     private String mPrice;
     private String mImageUrl;
+    private String mBid;
     public OfficeAndSchoolSupplies() {
         //empty constructor needed
     }
 
-    public OfficeAndSchoolSupplies(String name, String price,String imageUrl) {
+    public OfficeAndSchoolSupplies(String name, String price,String imageUrl,String bid) {
         if (name.trim().equals("")) {
             name = "No Name";
         }
@@ -16,6 +17,7 @@ public class OfficeAndSchoolSupplies {
         mName = name;
         mPrice=price;
         mImageUrl = imageUrl;
+        mBid=bid;
     }
 
     public String getName() {
@@ -38,5 +40,12 @@ public class OfficeAndSchoolSupplies {
 
     public void setImageUrl(String imageUrl) {
         mImageUrl = imageUrl;
+    }
+    public String getBid() {
+        return mBid;
+    }
+
+    public void setBid(String bid) {
+        mBid = bid;
     }
 }

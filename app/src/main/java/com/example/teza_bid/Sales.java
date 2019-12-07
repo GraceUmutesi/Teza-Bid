@@ -71,7 +71,7 @@ public class Sales extends AppCompatActivity implements AdapterView.OnItemSelect
         ButterKnife.bind(this);
         mButtonChooseImage = findViewById(R.id.choose);
         mButtonUpload = findViewById(R.id.createUserButton);
-        mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
+//        mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
         mView=findViewById(R.id.View);
         mPrice=findViewById(R.id.priceOfUserEditText);
         mImageView = findViewById(R.id.image_view);
@@ -153,12 +153,12 @@ else */
 
             }
         });*/
-        mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openImagesActivity();
-            }
-        });
+//        mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openImagesActivity();
+//            }
+//        });
         mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,6 +166,7 @@ else */
                 Intent intent = new Intent(Sales.this, SampleActivity.class);
 
                 startActivity(intent);
+
             }
         });
 
@@ -288,7 +289,8 @@ else */
                                         {
                                             Uri downloadUri = task.getResult();
                                             /*Log.e(TAG, "then: " + downloadUri.toString());*/
-
+                                            SharedPreferences mySharedPreferences = getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                                            String username = mySharedPreferences.getString("bid", "");
 
                                             Member upload = new Member(mEditTextFileName.getText().toString().trim(),
                                                     mPrice.getText().toString().trim(),
@@ -343,10 +345,10 @@ else */
 
 
     }
-    private void openImagesActivity() {
-        Intent intent = new Intent(this, SavedSalesProducts.class);
-        startActivity(intent);
-    }
+//    private void openImagesActivity() {
+//        Intent intent = new Intent(this, SavedSalesProducts.class);
+//        startActivity(intent);
+//    }
 
 
 

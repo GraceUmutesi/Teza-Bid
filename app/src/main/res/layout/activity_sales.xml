@@ -5,47 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.teza_bid.CreateAccountforSeller">
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp">
-
         <EditText
             android:id="@+id/nameOfUserEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@android:color/white"
             android:hint="Name of the product"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:textColor="@android:color/black"
-            android:textColorHint="@color/colorPrimary"
+            android:textColorHint="@android:color/darker_gray"
             android:textSize="20sp" />
-
         <RelativeLayout
             android:layout_width="348dp"
             android:layout_height="92dp">
-
             <ImageView
                 android:id="@+id/image_view"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp" />
-
-
+                android:layout_marginTop="16dp"
+               />
             <Button
                 android:id="@+id/choose"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/image_view"
                 android:paddingLeft="3dp"
-
                 android:text="Choose profile" />
-
             <!--<Button
                 android:id="@+id/upload"
                 android:layout_width="wrap_content"
@@ -54,21 +46,18 @@
                 android:layout_marginStart="15dp"
                 android:layout_toEndOf="@id/profile"
                 android:layout_below="@id/choose"
-
                 android:text="Upload" />-->
         </RelativeLayout>
-
         <EditText
             android:id="@+id/priceOfUserEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@android:color/white"
-            android:hint="price"
+            android:hint="price  Rwf"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:textColor="@android:color/black"
-            android:textColorHint="@color/colorPrimary"
+            android:textColorHint="@android:color/darker_gray"
             android:textSize="20sp" />
         <Spinner
             android:id="@+id/spinner1"
@@ -76,9 +65,6 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"/>
-
-
-
         <ProgressBar
             android:id="@+id/progress_bar"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -91,8 +77,6 @@
             android:id="@+id/View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/text_view_show_uploads"
-
             android:text="View"
             android:textSize="16sp" />
         <Button
@@ -104,20 +88,17 @@
             android:padding="10dp"
             android:text="Save"
             android:textColor="@color/colorPrimary" />
-
-        <Button
-            android:id="@+id/text_view_show_uploads"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="205dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:text="Show Uploads"
-            android:textSize="16sp" />
-
+        <!--  <Button
+              android:id="@+id/text_view_show_uploads"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="205dp"
+              android:layout_marginLeft="15dp"
+              android:layout_marginTop="4dp"
+              android:gravity="center"
+              android:text="Show Uploads"
+              android:textSize="16sp" />-->
     </LinearLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,11 +108,9 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30dp"
         android:textStyle="bold" />
-
- <!--   <ListView
-        android:id="@+id/listViewArtists"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="400dp" />-->
-
+    <!--   <ListView
+           android:id="@+id/listViewArtists"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginTop="400dp" />-->
 </RelativeLayout>
