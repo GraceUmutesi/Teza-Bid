@@ -18,7 +18,7 @@ public class Member {
         mName = name;
         mPrice=price;
         mImageUrl = imageUrl;
-//        mBid=bid;
+//      mBid=bid;
     }
 
     public String getName() {

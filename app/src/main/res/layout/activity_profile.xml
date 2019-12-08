@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imagePerson"
+        android:src="@mipmap/ic_person_black_24dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="347dp"
+        android:layout_height="73dp"
+        android:layout_below="@+id/imagePerson"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:text="NAME"
+        android:textSize="40dp"
+        android:textStyle="italic" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/emaiL"-->
+<!--        android:layout_width="133dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/name"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:text="Email" />-->
+</RelativeLayout>

@@ -11,11 +11,11 @@ public class NewPrice {
 
     }
 
-    public String getmBid() {
+    public String getBid() {
         return mBid;
     }
 
-    public void setmBid(String mBid) {
+    public void setBid(String mBid) {
         this.mBid = mBid;
     }
 }

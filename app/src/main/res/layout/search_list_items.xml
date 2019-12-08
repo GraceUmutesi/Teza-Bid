@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/img_list"
+    android:layout_width="55dp"
+    android:layout_height="55dp"
+    android:padding="2dp"
+    android:src="@mipmap/ic_launcher_round"
+    app:civ_border_color="@color/colorPrimaryDark"
+    app:civ_border_width="1dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/name_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name goes here"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price goes here"/>
+    </LinearLayout>
+</LinearLayout>

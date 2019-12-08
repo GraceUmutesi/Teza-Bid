@@ -73,7 +73,7 @@ public class ArtistList extends RecyclerView.Adapter<ArtistList.ImageViewHolder>
                     public void onClick(View v) {
 //                        Toast.makeText(mContext, "bla bla bla", Toast.LENGTH_SHORT).show();
                 String b=mEditText.getText().toString().trim();
-                price.setmBid(b);
+                price.setBid(b);
 
                         SharedPreferences mySharedPreferences = mContext.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = mySharedPreferences.edit();
@@ -85,6 +85,9 @@ public class ArtistList extends RecyclerView.Adapter<ArtistList.ImageViewHolder>
 
                         try
                         {
+                            SharedPreferences mySharedPreferences1 = mContext.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+//        String username = mySharedPreferences.getString("name", "");
+                            String Name = mySharedPreferences1.getString("name", "");
                             int bid = Integer.parseInt(b.trim());
                             String price=uploadCurrent.getPrice().trim();
                             int n = Integer.parseInt(price.trim());
@@ -94,7 +97,7 @@ public class ArtistList extends RecyclerView.Adapter<ArtistList.ImageViewHolder>
                                 String uploadId = mDatabaseRef2.push().getKey();
 
 
-                                mDatabaseRef2.child(uploadCurrent.getName()).child(uploadId).setValue(b);
+                                mDatabaseRef2.child(uploadCurrent.getName()).child(Name).child(uploadId).setValue(b);
                                 Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
                             }
                             else {

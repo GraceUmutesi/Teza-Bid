@@ -3,7 +3,9 @@ package com.example.teza_bid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -93,7 +95,7 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
 
         if (view == mCreate) {
             createNewUser();
-            Intent intent = new Intent(CreateAccountforSeller.this, Sales.class);
+            Intent intent = new Intent(CreateAccountforSeller.this, LoginForSeller.class);
             startActivity(intent);
 
         }
@@ -101,8 +103,18 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
     }
 
     private void createNewUser() {
-        final String name = mNameOfUserEditText.getText().toString().trim();
-        final String email = mEmailOfUserEditText.getText().toString().trim();
+         String name = mNameOfUserEditText.getText().toString().trim();
+        SharedPreferences mySharedPreferences = CreateAccountforSeller.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mySharedPreferences.edit();
+        editor.putString("name",name);
+        editor.apply();
+//        Intent intent2 = new Intent();
+//        new Intent(getApplicationContext(), LoginForSeller.class);
+//        intent2.putExtra("name", name);
+//        startActivity(intent2);
+         String email = mEmailOfUserEditText.getText().toString().trim();
+//        editor.putString("email",email);
+
         String password = mPassworOfUserdEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
 

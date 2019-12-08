@@ -60,9 +60,11 @@ public class Sales extends AppCompatActivity implements AdapterView.OnItemSelect
     private static final String TAG ="Sales";
     private StorageTask mUploadTask;
    private Button mView;
-
+    String furn;
    Spinner category;
    private String data;
+    private DatabaseReference mDatabaseRef2;
+
     @BindView(R.id.nameOfUserEditText) EditText mEditTextFileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,11 +122,26 @@ else */
                     Toast.makeText(Sales.this, "Upload in progress", Toast.LENGTH_SHORT).show();
                 } else {
                     data =category.getSelectedItem().toString();
+//                    SharedPreferences mySharedPreferences1 = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+////        String username = mySharedPreferences.getString("name", "");
+//                    String Name = mySharedPreferences1.getString("name", "");
+
+
                     if(data =="Office and Supplies"){
                         mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("OfficeSupplies");
+                        furn="OfficeSupplies";
+                        SharedPreferences mySharedPreferences = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = mySharedPreferences.edit();
+                        editor.putString("furn",furn);
+                        editor.apply();
                     }
                     if(data =="Furniture"){
                         mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("Furniture");
+                        furn="Furniture";
+                        SharedPreferences mySharedPreferences = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = mySharedPreferences.edit();
+                        editor.putString("furn",furn);
+                        editor.apply();
                     }
                     if(data =="Automobiles and Motorycles"){
                         mDatabaseRef=FirebaseDatabase.getInstance().getReference().child("AutomobilesAndMotorycles");
@@ -144,7 +161,9 @@ else */
 
 
                     Fileuploader();
+
                 }
+
             }
         });
       /*  move.setOnClickListener(new View.OnClickListener() {
@@ -163,7 +182,7 @@ else */
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Sales.this, SampleActivity.class);
+                Intent intent = new Intent(Sales.this, Bid.class);
 
                 startActivity(intent);
 
@@ -298,8 +317,38 @@ else */
 
                                             Intent intent1 = new Intent(Sales.this,SavedSalesProducts.class);
                                           /*  intent1.putExtra("data", data);*/
+
                                             String uploadId = mDatabaseRef.push().getKey();
                                             mDatabaseRef.child(uploadId).setValue(upload);
+                                            String nameOfProduct=mEditTextFileName.getText().toString().trim();
+                                            String PriceProduct=mPrice.getText().toString().trim();
+                                            String uri=downloadUri.toString();
+                                            SharedPreferences mySharedPreferences2 = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = mySharedPreferences2.edit();
+                                            editor.putString("nameOfProduct",nameOfProduct);
+                                            editor.apply();
+
+                                            SharedPreferences mySharedPreferences3 = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                                            SharedPreferences.Editor editor1 = mySharedPreferences3.edit();
+                                            editor1.putString("PriceProduct",PriceProduct);
+                                            editor1.apply();
+
+                                            SharedPreferences mySharedPreferences4 = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+                                            SharedPreferences.Editor editor2 = mySharedPreferences4.edit();
+                                            editor2.putString("uri",uri);
+                                            editor2.apply();
+
+
+                                            SharedPreferences mySharedPreferences1 = Sales.this.getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
+//        String username = mySharedPreferences.getString("name", "");
+                                            String Name = mySharedPreferences1.getString("name", "");
+                                            mDatabaseRef2= FirebaseDatabase.getInstance().getReference().child("seeBids").child(Name);
+
+                                            Member upload1 = new Member(mEditTextFileName.getText().toString().trim(),
+                                                    mPrice.getText().toString().trim(),
+                                                    downloadUri.toString());
+                                            String uploadId1 = mDatabaseRef2.push().getKey();
+                                            mDatabaseRef2.child(uploadId1).setValue(upload1);
 
                                             mPreferences=getSharedPreferences("com.example.teza_bid", Context.MODE_PRIVATE);
                                             mEditor=mPreferences.edit();
