@@ -5,21 +5,53 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SampleActivity"></activity>
-        <activity android:name=".RoomActivity" />
-        <activity android:name=".EstateActivity" />
-        <activity android:name=".CarActivity" />
-        <activity android:name=".HouseActivity" />
+        <activity android:name=".SellerDashboard"
+            android:parentActivityName=".LoginForSeller"/>
+        <activity android:name=".SignupActivityForBuyer" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".LoginActivityForBuyer" />
+        <activity android:name=".Rent11FormActivity"
+            android:parentActivityName=".HouseActivity"/>
+        <activity android:name=".Rent10FormActivity"
+            android:parentActivityName=".HouseActivity"/>
+        <activity android:name=".Rent5FormActivity" />
+        <activity android:name=".Rent4FormActivity"
+            android:parentActivityName=".HouseActivity"/>
+        <activity android:name=".RentFormActivity" />
+        <activity android:name=".Rent9FormActivity"
+            android:parentActivityName=".EstateActivity"/>
+        <activity android:name=".Rent8FormActivity"
+            android:parentActivityName=".EstateActivity"/>
+        <activity android:name=".Rent2FormActivity"
+            android:parentActivityName=".EstateActivity"/>
+        <activity android:name=".Rent7FormActivity"
+            android:parentActivityName=".CarActivity"/>
+        <activity android:name=".Rent6FormActivity"
+            android:parentActivityName=".CarActivity"/>
+        <activity android:name=".Rent1FormActivity"
+            android:parentActivityName=".CarActivity"/>
+        <activity android:name=".Rent3FormActivity" />
+        <activity android:name=".SampleActivity" />
+        <activity android:name=".RoomActivity"
+            android:parentActivityName=".RentActivity"/>
+        <activity android:name=".EstateActivity"
+            android:parentActivityName=".RentActivity"/>
+        <activity android:name=".CarActivity"
+            android:parentActivityName=".RentActivity"/>
+        <activity android:name=".HouseActivity"
+            android:parentActivityName=".RentActivity"/>
         <activity android:name=".RentActivity" />
-        <activity android:name=".LoginForSeller" />
+        <activity android:name=".LoginForSeller"
+            android:parentActivityName=".CreateAccountforSeller"/>
         <activity android:name=".CreateAccountforSeller" />
-        <activity android:name=".Sales" />
+        <activity android:name=".Sales"
+            />
         <activity android:name=".SavedSalesProducts" />
         <activity
             android:name=".MainActivity"
@@ -31,6 +63,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

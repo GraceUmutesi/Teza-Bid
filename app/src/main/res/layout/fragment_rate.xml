@@ -1,19 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.rate.RateFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_share"/>
+    <TextView
+        android:id="@+id/app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="80dp"
+        android:text="RATE THIS APP"
+        android:textColor="@android:color/black"
+        android:textSize="45dp"
+        />
 
     <TextView
-        android:id="@+id/text_share"
-        android:layout_width="match_parent"
+        android:id="@+id/words"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/app"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/andada"
+        android:includeFontPadding="false"
+        android:text="What do you think about this app"
+        android:textColor="@android:color/black"
+        android:textSize="22dp"
+        app:fontFamily="@font/andada" />
+    <RatingBar
+        android:id="@+id/bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:numStars="5"
+        android:stepSize=".5"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/bar"
+        android:text="Submit"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:id="@+id/tetiew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/andada"
+        android:text="Here is your rating"
+        android:textColor="@android:color/black"
+        android:textSize="22dp" />
+</RelativeLayout>

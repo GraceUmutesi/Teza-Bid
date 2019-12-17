@@ -42,10 +42,19 @@ public class EstateActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                Intent estate = new Intent(EstateActivity.this,RentFormActivity.class);
-//                startActivity(estate);
+                if (position == 0) {
 
+                    Intent estate = new Intent(EstateActivity.this, Rent2FormActivity.class);
+                    startActivity(estate);
+                }
+                if (position == 1){
+                    Intent estate1 = new Intent(EstateActivity.this, Rent8FormActivity.class);
+                    startActivity(estate1);
+                }
+                if (position == 2){
+                    Intent estate2 = new Intent(EstateActivity.this, Rent9FormActivity.class);
+                    startActivity(estate2);
+                }
             }
         });
 
@@ -75,6 +84,8 @@ public class EstateActivity extends AppCompatActivity {
             return row;
         }
     }
+
+
 
 
 }

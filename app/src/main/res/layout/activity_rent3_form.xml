@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Rent3FormActivity">
+    <ImageView
+        android:id="@+id/imgi1"
+        android:src="@drawable/bath"
+        android:layout_width="177dp"
+        android:layout_height="300dp" />
+    <ImageView
+        android:id="@+id/imgi2"
+        android:src="@drawable/wra"
+        android:layout_toRightOf="@+id/imgi1"
+        android:layout_width="270dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="8dp"
+
+        />
+
+    <TextView
+        android:id="@+id/descii1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgi1"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:text="A single medium bedroom,with a bathroom and a wardrobe"
+        android:textColor="@android:color/black"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/butto1"
+        android:layout_below="@+id/descii1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Get Connected"
+        android:textColor="@android:color/black"/>
+</RelativeLayout>

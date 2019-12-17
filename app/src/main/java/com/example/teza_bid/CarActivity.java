@@ -40,11 +40,24 @@ public class CarActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                Intent estate = new Intent(CarActivity.this,RentFormActivity.class);
-//                startActivity(estate);
+
+                if (position == 0) {
+
+                    Intent car = new Intent(CarActivity.this, Rent1FormActivity.class);
+                    startActivity(car);
+                }
+                if (position == 1){
+                    Intent car1 = new Intent(CarActivity.this, Rent6FormActivity.class);
+                    startActivity(car1);
+                }
+                if (position == 2){
+                    Intent car2 = new Intent(CarActivity.this, Rent7FormActivity.class);
+                    startActivity(car2);
+                }
 
             }
+
+
         });
 
     }
@@ -74,5 +87,4 @@ public class CarActivity extends AppCompatActivity {
             return row;
         }
     }
-
 }

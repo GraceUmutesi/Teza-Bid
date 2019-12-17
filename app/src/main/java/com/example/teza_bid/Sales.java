@@ -79,10 +79,6 @@ public class Sales extends AppCompatActivity implements AdapterView.OnItemSelect
         category = (Spinner) findViewById(R.id.spinner1);
 
 
-        /*mRecyclerView = findViewById(R.id.recycler_view);
-        nameOfTheProduct=(EditText)findViewById(R.id.nameOfUserEditText);
-        price=(EditText)findViewById(R.id.priceOfUserEditText);*/
-        /*  url=(EditText)findViewById(R.id.)*/
 
         mStorageRef=FirebaseStorage.getInstance().getReference("Images");
 
@@ -264,7 +260,7 @@ else */
                             if (mImageUri != null)
                             {
                                 mStorageRef.putFile(mImageUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
-                                {
+{
                                     @Override
                                     public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
                                     {
@@ -275,7 +271,7 @@ else */
                                         return taskSnapshot.getStorage().getDownloadUrl();
                                     }
                                 }).addOnCompleteListener(new OnCompleteListener<Uri>()
-                                {
+{
                                     @Override
                                     public void onComplete(@NonNull Task<Uri> task)
                                     {

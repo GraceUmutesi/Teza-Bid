@@ -1,6 +1,7 @@
 package com.example.teza_bid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,19 +11,19 @@ import android.widget.Button;
 import butterknife.ButterKnife;
 
 public class SampleActivity extends AppCompatActivity {
-    private Button office;
-    private Button furniture;
-    private Button auto;
-    private Button electronics;
-    private Button arts;
-    private Button entertainment;
-    private Button other;
+    private CardView office;
+    private CardView furniture;
+    private CardView auto;
+    private CardView electronics;
+    private CardView arts;
+    private CardView entertainment;
+    private CardView other;
     private String NAME;
     String furn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample);
+        setContentView(R.layout.fragment_bid);
 
         /* mEditTextFileName = findViewById(R.id.nameOfUserEditText);*/
         office = findViewById(R.id.office);

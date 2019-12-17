@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "559792651820-gh2ur1f27sbnnd7n7such7mqq9dltkbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teza_bid",
+            "certificate_hash": "bd7ef324e33991cf2e7bf3f09e00161676c24dd1"
+          }
+        },
+        {
           "client_id": "559792651820-st0unik4u0610u0dutconubnqnl6ob68.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

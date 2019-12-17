@@ -5,16 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.teza_bid.LoginForSeller"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/b4">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="20dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_bg2"
         android:id="@+id/linearLayout">
+        <EditText
+            android:id="@+id/nameOfUserEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:hint="Name"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/emailEditText"
@@ -50,7 +63,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Log in"
-            android:background="@color/colorAccent"
+            android:background="@drawable/layout_bg"
             android:layout_marginTop="15dp"
             android:textColor="@color/colorPrimary" />
 
@@ -58,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="@color/colorAccent"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Don't have an account? Sign up here!"

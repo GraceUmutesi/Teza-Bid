@@ -4,6 +4,7 @@ public class Member {
     private String mName;
     private String mPrice;
     private String mImageUrl;
+    private String mBid;
 
     public Member() {
         //empty constructor needed
@@ -17,6 +18,7 @@ public class Member {
         mName = name;
         mPrice=price;
         mImageUrl = imageUrl;
+//      mBid=bid;
     }
 
     public String getName() {
@@ -42,5 +44,12 @@ public class Member {
     public void setImageUrl(String imageUrl) {
         mImageUrl = imageUrl;
     }
-}
 
+    public String getBid() {
+        return mBid;
+    }
+
+    public void setBid(String bid) {
+        this.mBid = bid;
+    }
+}

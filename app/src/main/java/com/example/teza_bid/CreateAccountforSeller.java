@@ -30,7 +30,8 @@ import butterknife.ButterKnife;
 
 public class CreateAccountforSeller extends AppCompatActivity  implements View.OnClickListener{
 
-    @BindView(R.id.createUserButton) Button mCreate;
+    @BindView(R.id.createUserButton)
+    Button mCreate;
     @BindView(R.id.nameOfUserEditText)
     EditText mNameOfUserEditText;
     @BindView(R.id.emailOfUserEditText) EditText mEmailOfUserEditText;
@@ -46,7 +47,9 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_sell);
-        final TextView textView = findViewById(R.id.terms);
+
+        TextView textView = findViewById(R.id.terms);
+        TextView mLoginTextView = findViewById(R.id.loginTextView);
         String text = "By tapping the button sign up, you agree to our terms and conditions and therefore will obey them";
         SpannableString ss = new SpannableString(text);
         ClickableSpan clickableSpan1 = new ClickableSpan() {
@@ -83,22 +86,19 @@ public class CreateAccountforSeller extends AppCompatActivity  implements View.O
     @Override
     public void onClick(View view) {
 
-
-        Bundle bundle = getIntent().getExtras();
         if (view == mLoginTextView) {
-            Intent intent = new Intent(this, LoginForSeller.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Intent intent = new Intent(CreateAccountforSeller.this, LoginForSeller.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-            finish();
+
         }
 
-            if (view == mCreate) {
-                createNewUser();
-                Intent intent = new Intent(this, Sales.class);
-                startActivity(intent);
-            }
+        if (view == mCreate) {
+            createNewUser();
+            Intent intent = new Intent(CreateAccountforSeller.this, Sales.class);
+            startActivity(intent);
 
-
+        }
 
     }
 

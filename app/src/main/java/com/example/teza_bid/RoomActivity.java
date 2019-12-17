@@ -42,8 +42,19 @@ public class RoomActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                Intent estate = new Intent(RoomActivity.this,RentFormActivity.class);
-//                startActivity(estate);
+                if (position == 0) {
+
+                    Intent room = new Intent(RoomActivity.this, Rent3FormActivity.class);
+                    startActivity(room);
+                }
+                if (position == 1){
+                    Intent room1 = new Intent(RoomActivity.this, Rent10FormActivity.class);
+                    startActivity(room1);
+                }
+                if (position == 2){
+                    Intent room2 = new Intent(RoomActivity.this, Rent11FormActivity.class);
+                    startActivity(room2);
+                }
 
             }
         });

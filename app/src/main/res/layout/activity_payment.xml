@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PaymentActivity"
+    android:background="@drawable/money"
+    android:scaleType="centerCrop">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/methods"
+        android:fontFamily="@font/amarante"
+        android:text="Choose your mode of payment"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/amarante" />
+
+    <RelativeLayout
+        android:id="@+id/methods"
+        android:layout_width="wrap_content"
+        android:layout_height="212dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:paddingTop="60dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/m"
+            android:layout_width="147dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/payments"
+            android:padding="2dp">
+
+            <ImageButton
+                android:id="@+id/mtn"
+                android:layout_width="122dp"
+                android:layout_height="68dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/mtn1" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toEndOf="@+id/m"
+            android:background="@drawable/payments"
+            android:padding="2dp"
+            tools:ignore="RtlCompat">
+
+            <ImageButton
+                android:id="@+id/airteltigo"
+                android:layout_width="125dp"
+                android:layout_height="74dp"
+                android:layout_below="@+id/mtn"
+                android:layout_margin="20dp"
+                android:src="@drawable/airteltigo" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</LinearLayout>

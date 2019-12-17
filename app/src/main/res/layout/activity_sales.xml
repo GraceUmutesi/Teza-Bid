@@ -42,9 +42,10 @@
                 android:id="@+id/choose"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
                 android:layout_toRightOf="@id/image_view"
-                android:paddingLeft="3dp"
 
+                android:paddingLeft="3dp"
                 android:text="Choose profile" />
 
             <!--<Button
@@ -64,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
 
-            android:hint="price"
+            android:hint="price Rwf"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:textColor="@android:color/black"

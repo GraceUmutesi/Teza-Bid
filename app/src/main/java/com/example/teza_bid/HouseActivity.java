@@ -39,9 +39,19 @@ public class HouseActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
 
-//                Intent estate = new Intent(HouseActivity.this,RentFormActivity.class);
-//                startActivity(estate);
+                    Intent house = new Intent(HouseActivity.this, RentFormActivity.class);
+                    startActivity(house);
+                }
+                if (position == 1){
+                    Intent house1 = new Intent(HouseActivity.this, Rent4FormActivity.class);
+                    startActivity(house1);
+                }
+                if (position == 2){
+                    Intent house2 = new Intent(HouseActivity.this, Rent5FormActivity.class);
+                    startActivity(house2);
+                }
 
             }
         });
@@ -73,5 +83,4 @@ public class HouseActivity extends AppCompatActivity {
             return row;
         }
     }
-
 }
